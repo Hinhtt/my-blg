@@ -49,5 +49,22 @@
     "preview": {},
     "last_modified": "2023-01-02T23:19:04+09:00",
     "input_file": "this-is-my-second-post.knit.md"
+  },
+  {
+    "path": "posts/2023-01-02-this-is-my-third-post/",
+    "title": "This is my third post...",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "ヒン",
+        "url": "https://runiverse.com/trantuanhinh"
+      }
+    ],
+    "date": "2023-01-02",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\nToday I am happy to successfully automate my blog updates with Github.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2023-01-02T23:23:06+09:00",
+    "input_file": "this-is-my-third-post.knit.md"
   }
 ]
