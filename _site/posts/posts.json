@@ -47,7 +47,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\nmtcars %>%\n  filter(mpg > 22)\n\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nDatsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nMerc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nFiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nFiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2023-01-02T23:16:58+09:00",
+    "last_modified": "2023-01-02T23:19:04+09:00",
     "input_file": "this-is-my-second-post.knit.md"
   }
 ]
