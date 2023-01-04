@@ -81,7 +81,7 @@
     "categories": [],
     "contents": "\n\n\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(janitor)\nsetwd(\"~/Downloads\")\nat_health_facilities <- read_csv(\"at_health_facilities.csv\")\n\nat_health_facilities <- clean_names(at_health_facilities)\n\n# How many countries reported data? 100\nlength(unique(at_health_facilities$iso3))\n\n[1] 100\n\n# What is the difference between the minimum and maximum year with valid data for each country?\n\nat_health_facilities %>%\n  filter(is.numeric(age_15_17) | is.numeric(age_20_34)) %>%\n  group_by(iso3) %>%\n  summarize(dif = max(year) - min(year))\n\n# A tibble: 100 × 2\n   iso3    dif\n   <chr> <dbl>\n 1 AFG       0\n 2 ALB       3\n 3 ARG       0\n 4 ARM      10\n 5 AZE       0\n 6 BDI       5\n 7 BEN      10\n 8 BFA       7\n 9 BGD      10\n10 BIH       5\n# … with 90 more rows\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2023-01-04T22:13:19+09:00",
+    "last_modified": "2023-01-04T22:16:23+09:00",
     "input_file": "this-is-my-fouth-post.knit.md"
   }
 ]
