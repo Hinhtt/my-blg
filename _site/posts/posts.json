@@ -1,22 +1,5 @@
 [
   {
-    "path": "posts/2023-01-02-this-is-my-first-post/",
-    "title": "This is my first post...",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "ヒン",
-        "url": "https://runiverse.com/trantuanhinh"
-      }
-    ],
-    "date": "2023-01-02",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\nggplot(mtcars, \n       aes(x=mpg, y = cyl)) +\n  geom_point() + \n  geom_smooth()\n\n\n\n\n\n\n",
-    "preview": "posts/2023-01-02-this-is-my-first-post/this-is-my-first-post_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2023-01-02T22:27:57+09:00",
-    "input_file": {}
-  },
-  {
     "path": "posts/welcome/",
     "title": "Welcome to r universe",
     "description": "Welcome to our new blog, r universe. I hope you enjoy \nreading what we have to say!",
@@ -83,5 +66,22 @@
     "preview": {},
     "last_modified": "2023-01-04T22:16:23+09:00",
     "input_file": "this-is-my-fouth-post.knit.md"
+  },
+  {
+    "path": "posts/2023-01-02-this-is-my-first-post/",
+    "title": "ggplot2",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "ヒン",
+        "url": "https://runiverse.com/trantuanhinh"
+      }
+    ],
+    "date": "2023-01-02",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\nggplot(mtcars, \n       aes(x=mpg, y = cyl)) +\n  geom_point() + \n  geom_smooth()\n\n\n\n\n\n\n",
+    "preview": "posts/2023-01-02-this-is-my-first-post/this-is-my-first-post_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2023-01-04T22:27:28+09:00",
+    "input_file": "this-is-my-first-post.knit.md"
   }
 ]
