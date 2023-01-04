@@ -51,23 +51,6 @@
     "input_file": "this-is-my-third-post.knit.md"
   },
   {
-    "path": "posts/2023-01-04-this-is-my-fouth-post/",
-    "title": "This is my fourth post...",
-    "description": "Dplyr package",
-    "author": [
-      {
-        "name": "ヒン",
-        "url": "https://runiverse.com/trantuanhinh"
-      }
-    ],
-    "date": "2023-01-02",
-    "categories": [],
-    "contents": "\n\n\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(janitor)\nsetwd(\"~/Downloads\")\nat_health_facilities <- read_csv(\"at_health_facilities.csv\")\n\nat_health_facilities <- clean_names(at_health_facilities)\n\n# How many countries reported data? 100\nlength(unique(at_health_facilities$iso3))\n\n[1] 100\n\n# What is the difference between the minimum and maximum year with valid data for each country?\n\nat_health_facilities %>%\n  filter(is.numeric(age_15_17) | is.numeric(age_20_34)) %>%\n  group_by(iso3) %>%\n  summarize(dif = max(year) - min(year))\n\n# A tibble: 100 × 2\n   iso3    dif\n   <chr> <dbl>\n 1 AFG       0\n 2 ALB       3\n 3 ARG       0\n 4 ARM      10\n 5 AZE       0\n 6 BDI       5\n 7 BEN      10\n 8 BFA       7\n 9 BGD      10\n10 BIH       5\n# … with 90 more rows\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2023-01-04T22:16:23+09:00",
-    "input_file": "this-is-my-fouth-post.knit.md"
-  },
-  {
     "path": "posts/2023-01-02-this-is-my-first-post/",
     "title": "ggplot2",
     "description": "A short description of the post.",
@@ -83,5 +66,22 @@
     "preview": "posts/2023-01-02-this-is-my-first-post/this-is-my-first-post_files/figure-html5/unnamed-chunk-1-1.png",
     "last_modified": "2023-01-04T22:27:28+09:00",
     "input_file": "this-is-my-first-post.knit.md"
+  },
+  {
+    "path": "posts/2023-01-04-this-is-my-fouth-post/",
+    "title": "This is my fourth post...",
+    "description": "Dplyr package",
+    "author": [
+      {
+        "name": "ヒン",
+        "url": "https://runiverse.com/trantuanhinh"
+      }
+    ],
+    "date": "2023-01-02",
+    "categories": [],
+    "contents": "\n\n\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(janitor)\nsetwd(\"~/Downloads\")\nat_health_facilities <- read_csv(\"at_health_facilities.csv\")\n\nat_health_facilities <- clean_names(at_health_facilities)\n\n# How many countries reported data? 100\nlength(unique(at_health_facilities$iso3))\n\n[1] 100\n\n# What is the difference between the minimum and maximum year with valid data for each country?\n\nat_health_facilities %>%\n  filter(is.numeric(age_15_17) | is.numeric(age_20_34)) %>%\n  group_by(iso3) %>%\n  summarize(dif = max(year) - min(year))\n\n# A tibble: 100 × 2\n   iso3    dif\n   <chr> <dbl>\n 1 AFG       0\n 2 ALB       3\n 3 ARG       0\n 4 ARM      10\n 5 AZE       0\n 6 BDI       5\n 7 BEN      10\n 8 BFA       7\n 9 BGD      10\n10 BIH       5\n# … with 90 more rows\n\n# How many countries reported data in 3 or more years? 34\n\nat_health_facilities %>%\n  group_by(iso3) %>%\n  summarise(year_count = n_distinct(year)) %>%\n  count(year_count >= 3)\n\n# A tibble: 2 × 2\n  `year_count >= 3`     n\n  <lgl>             <int>\n1 FALSE                66\n2 TRUE                 34\n\n# Which countries reported 100% incidence for at least one year in either age group? \n\nat_health_facilities %>%\n  filter(age_15_17 == 100 | age_20_34 == 100) %>%\n  distinct(iso3) %>% \n  count()\n\n# A tibble: 1 × 1\n      n\n  <int>\n1    18\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2023-01-04T22:40:04+09:00",
+    "input_file": "this-is-my-fouth-post.knit.md"
   }
 ]

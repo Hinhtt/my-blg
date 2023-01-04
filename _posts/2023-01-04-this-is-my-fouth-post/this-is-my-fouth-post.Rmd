@@ -35,10 +35,19 @@ at_health_facilities %>%
   group_by(iso3) %>%
   summarize(dif = max(year) - min(year))
   
+# How many countries reported data in 3 or more years? 34
 
+at_health_facilities %>%
+  group_by(iso3) %>%
+  summarise(year_count = n_distinct(year)) %>%
+  count(year_count >= 3)
 
+# Which countries reported 100% incidence for at least one year in either age group? 
 
-
+at_health_facilities %>%
+  filter(age_15_17 == 100 | age_20_34 == 100) %>%
+  distinct(iso3) %>% 
+  count()
 
 
 
