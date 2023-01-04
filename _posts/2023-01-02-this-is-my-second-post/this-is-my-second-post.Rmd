@@ -24,8 +24,16 @@ Learn more about using Distill at <https://rstudio.github.io/distill>.
 library(dplyr)
 library(ggplot2)
 
+# Filter(): 
 mtcars %>%
   filter(mpg > 22)
+
+# Select(): 
+
+mtcars %>%
+  select(1:4)
+
+# these are very simple example of the functions filter() and select() in the dplyr package
 
 
 ```
