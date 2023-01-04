@@ -1,0 +1,58 @@
+---
+title: "This is my fourth post..."
+description: |
+  Dplyr package
+author:
+  - name: ヒン
+    url: https://runiverse.com/trantuanhinh
+date: 2023-01-02
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(readr)
+library(janitor)
+setwd("~/Downloads")
+at_health_facilities <- read_csv("at_health_facilities.csv")
+
+at_health_facilities <- clean_names(at_health_facilities)
+
+# How many countries reported data? 100
+length(unique(at_health_facilities$iso3))
+  
+# What is the difference between the minimum and maximum year with valid data for each country?
+
+at_health_facilities %>%
+  filter(is.numeric(age_15_17) | is.numeric(age_20_34)) %>%
+  group_by(iso3) %>%
+  summarize(dif = max(year) - min(year))
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+
+
+
+
+
+
