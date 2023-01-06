@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2023-01-06-this-is-about-eda/",
+    "title": "This is about EDA",
+    "description": "Visualize categorical variables with bar plots",
+    "author": [
+      {
+        "name": "ヒン",
+        "url": "https://runiverse.com/trantuanhinh"
+      }
+    ],
+    "date": "2023-01-06",
+    "categories": [],
+    "contents": "\n\n\nlibrary(tidyverse)\n\nggplot(diamonds) + \n  geom_bar(mapping = aes(x = cut))    # examine the distribution of a categorical variable\n\n\ndiamonds %>% count(cut)               # another way using count()\n\n# A tibble: 5 × 2\n  cut           n\n  <ord>     <int>\n1 Fair       1610\n2 Good       4906\n3 Very Good 12082\n4 Premium   13791\n5 Ideal     21551\n\nggplot(data = diamonds) +\n  geom_histogram(mapping = aes(x = carat), binwidth = 0.5) \n\n\n                                      # a histogram for continuous variables\n\ndiamonds %>% count(cut_width(carat, 0.5))\n\n# A tibble: 11 × 2\n   `cut_width(carat, 0.5)`     n\n   <fct>                   <int>\n 1 [-0.25,0.25]              785\n 2 (0.25,0.75]             29498\n 3 (0.75,1.25]             15977\n 4 (1.25,1.75]              5313\n 5 (1.75,2.25]              2002\n 6 (2.25,2.75]               322\n 7 (2.75,3.25]                32\n 8 (3.25,3.75]                 5\n 9 (3.75,4.25]                 4\n10 (4.25,4.75]                 1\n11 (4.75,5.25]                 1\n\n                                      # count by range\n\n\n\n\n\n",
+    "preview": "posts/2023-01-06-this-is-about-eda/this-is-about-eda_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2023-01-06T17:11:57+09:00",
+    "input_file": "this-is-about-eda.knit.md"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to r universe",
     "description": "Welcome to our new blog, r universe. I hope you enjoy \nreading what we have to say!",
