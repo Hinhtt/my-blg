@@ -1,7 +1,7 @@
 ---
-title: "About this blog"
+title: "Welcome"
 description: |
-  Some additional details about the blog
+  Hi, I'm Hinh and welcome to my cool blog. Hope you will find something useful about R here!
 ---
 
 ```{r setup, include=FALSE}

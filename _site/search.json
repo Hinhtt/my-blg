@@ -2,18 +2,18 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "title": "Welcome",
+      "description": "Hi, I'm Hinh and welcome to my cool blog. Hope you will find something useful about R here!",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2023-01-02T23:16:37+09:00"
+      "last_modified": "2023-01-06T17:21:47+09:00"
     },
     {
       "path": "index.html",
       "title": "my blg",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2023-01-02T23:16:37+09:00"
+      "last_modified": "2023-01-06T17:11:57+09:00"
     }
   ],
   "collections": ["posts/posts.json"]

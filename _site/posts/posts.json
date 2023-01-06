@@ -14,12 +14,12 @@
     "contents": "\n\n\nlibrary(tidyverse)\n\nggplot(diamonds) + \n  geom_bar(mapping = aes(x = cut))    # examine the distribution of a categorical variable\n\n\ndiamonds %>% count(cut)               # another way using count()\n\n# A tibble: 5 × 2\n  cut           n\n  <ord>     <int>\n1 Fair       1610\n2 Good       4906\n3 Very Good 12082\n4 Premium   13791\n5 Ideal     21551\n\nggplot(data = diamonds) +\n  geom_histogram(mapping = aes(x = carat), binwidth = 0.5) \n\n\n                                      # a histogram for continuous variables\n\ndiamonds %>% count(cut_width(carat, 0.5))\n\n# A tibble: 11 × 2\n   `cut_width(carat, 0.5)`     n\n   <fct>                   <int>\n 1 [-0.25,0.25]              785\n 2 (0.25,0.75]             29498\n 3 (0.75,1.25]             15977\n 4 (1.25,1.75]              5313\n 5 (1.75,2.25]              2002\n 6 (2.25,2.75]               322\n 7 (2.75,3.25]                32\n 8 (3.25,3.75]                 5\n 9 (3.75,4.25]                 4\n10 (4.25,4.75]                 1\n11 (4.75,5.25]                 1\n\n                                      # count by range\n\n\n\n\n\n",
     "preview": "posts/2023-01-06-this-is-about-eda/this-is-about-eda_files/figure-html5/unnamed-chunk-1-1.png",
     "last_modified": "2023-01-06T17:11:57+09:00",
-    "input_file": "this-is-about-eda.knit.md"
+    "input_file": {}
   },
   {
-    "path": "posts/welcome/",
-    "title": "Welcome to r universe",
-    "description": "Welcome to our new blog, r universe. I hope you enjoy \nreading what we have to say!",
+    "path": "posts/2023-01-02-this-is-my-first-post/",
+    "title": "ggplot2",
+    "description": "A short description of the post.",
     "author": [
       {
         "name": "ヒン",
@@ -28,9 +28,26 @@
     ],
     "date": "2023-01-02",
     "categories": [],
-    "contents": "\n\n\n\n",
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\nggplot(mtcars, \n       aes(x=mpg, y = cyl)) +\n  geom_point() + \n  geom_smooth()\n\n\n\n\n\n\n",
+    "preview": "posts/2023-01-02-this-is-my-first-post/this-is-my-first-post_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2023-01-04T22:27:28+09:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2023-01-02-this-is-my-second-post/",
+    "title": "Dplyr-filter and select",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "ヒン",
+        "url": "https://runiverse.com/trantuanhinh"
+      }
+    ],
+    "date": "2023-01-02",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Filter(): \nmtcars %>%\n  filter(mpg > 22)\n\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nDatsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nMerc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nFiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nFiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n\n# Select(): \n\nmtcars %>%\n  select(1:4)\n\n                     mpg cyl  disp  hp\nMazda RX4           21.0   6 160.0 110\nMazda RX4 Wag       21.0   6 160.0 110\nDatsun 710          22.8   4 108.0  93\nHornet 4 Drive      21.4   6 258.0 110\nHornet Sportabout   18.7   8 360.0 175\nValiant             18.1   6 225.0 105\nDuster 360          14.3   8 360.0 245\nMerc 240D           24.4   4 146.7  62\nMerc 230            22.8   4 140.8  95\nMerc 280            19.2   6 167.6 123\nMerc 280C           17.8   6 167.6 123\nMerc 450SE          16.4   8 275.8 180\nMerc 450SL          17.3   8 275.8 180\nMerc 450SLC         15.2   8 275.8 180\nCadillac Fleetwood  10.4   8 472.0 205\nLincoln Continental 10.4   8 460.0 215\nChrysler Imperial   14.7   8 440.0 230\nFiat 128            32.4   4  78.7  66\nHonda Civic         30.4   4  75.7  52\nToyota Corolla      33.9   4  71.1  65\nToyota Corona       21.5   4 120.1  97\nDodge Challenger    15.5   8 318.0 150\nAMC Javelin         15.2   8 304.0 150\nCamaro Z28          13.3   8 350.0 245\nPontiac Firebird    19.2   8 400.0 175\nFiat X1-9           27.3   4  79.0  66\nPorsche 914-2       26.0   4 120.3  91\nLotus Europa        30.4   4  95.1 113\nFord Pantera L      15.8   8 351.0 264\nFerrari Dino        19.7   6 145.0 175\nMaserati Bora       15.0   8 301.0 335\nVolvo 142E          21.4   4 121.0 109\n\n# these are very simple example of the functions filter() and select() in the dplyr package\n\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2023-01-02T23:03:05+09:00",
+    "last_modified": "2023-01-04T22:49:35+09:00",
     "input_file": {}
   },
   {
@@ -48,24 +65,7 @@
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\nToday I am happy to successfully automate my blog updates with Github.\n\n\n\n",
     "preview": {},
     "last_modified": "2023-01-02T23:26:08+09:00",
-    "input_file": "this-is-my-third-post.knit.md"
-  },
-  {
-    "path": "posts/2023-01-02-this-is-my-first-post/",
-    "title": "ggplot2",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "ヒン",
-        "url": "https://runiverse.com/trantuanhinh"
-      }
-    ],
-    "date": "2023-01-02",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\nggplot(mtcars, \n       aes(x=mpg, y = cyl)) +\n  geom_point() + \n  geom_smooth()\n\n\n\n\n\n\n",
-    "preview": "posts/2023-01-02-this-is-my-first-post/this-is-my-first-post_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2023-01-04T22:27:28+09:00",
-    "input_file": "this-is-my-first-post.knit.md"
+    "input_file": {}
   },
   {
     "path": "posts/2023-01-04-this-is-my-fouth-post/",
@@ -82,12 +82,12 @@
     "contents": "\n\n\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(janitor)\nsetwd(\"~/Downloads\")\nat_health_facilities <- read_csv(\"at_health_facilities.csv\")\n\nat_health_facilities <- clean_names(at_health_facilities)\n\n# How many countries reported data? 100\nlength(unique(at_health_facilities$iso3))\n\n[1] 100\n\n# What is the difference between the minimum and maximum year with valid data for each country?\n\nat_health_facilities %>%\n  filter(is.numeric(age_15_17) | is.numeric(age_20_34)) %>%\n  group_by(iso3) %>%\n  summarize(dif = max(year) - min(year))\n\n# A tibble: 100 × 2\n   iso3    dif\n   <chr> <dbl>\n 1 AFG       0\n 2 ALB       3\n 3 ARG       0\n 4 ARM      10\n 5 AZE       0\n 6 BDI       5\n 7 BEN      10\n 8 BFA       7\n 9 BGD      10\n10 BIH       5\n# … with 90 more rows\n\n# How many countries reported data in 3 or more years? 34\n\nat_health_facilities %>%\n  group_by(iso3) %>%\n  summarise(year_count = n_distinct(year)) %>%\n  count(year_count >= 3)\n\n# A tibble: 2 × 2\n  `year_count >= 3`     n\n  <lgl>             <int>\n1 FALSE                66\n2 TRUE                 34\n\n# Which countries reported 100% incidence for at least one year in either age group? \n\nat_health_facilities %>%\n  filter(age_15_17 == 100 | age_20_34 == 100) %>%\n  distinct(iso3) %>% \n  count()\n\n# A tibble: 1 × 1\n      n\n  <int>\n1    18\n\n\n\n\n",
     "preview": {},
     "last_modified": "2023-01-04T22:40:04+09:00",
-    "input_file": "this-is-my-fouth-post.knit.md"
+    "input_file": {}
   },
   {
-    "path": "posts/2023-01-02-this-is-my-second-post/",
-    "title": "Dplyr-filter and select",
-    "description": "A short description of the post.",
+    "path": "posts/welcome/",
+    "title": "Welcome to r universe",
+    "description": "Welcome to our new blog, r universe. I hope you enjoy \nreading what we have to say!",
     "author": [
       {
         "name": "ヒン",
@@ -96,9 +96,9 @@
     ],
     "date": "2023-01-02",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Filter(): \nmtcars %>%\n  filter(mpg > 22)\n\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nDatsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nMerc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nFiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nFiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n\n# Select(): \n\nmtcars %>%\n  select(1:4)\n\n                     mpg cyl  disp  hp\nMazda RX4           21.0   6 160.0 110\nMazda RX4 Wag       21.0   6 160.0 110\nDatsun 710          22.8   4 108.0  93\nHornet 4 Drive      21.4   6 258.0 110\nHornet Sportabout   18.7   8 360.0 175\nValiant             18.1   6 225.0 105\nDuster 360          14.3   8 360.0 245\nMerc 240D           24.4   4 146.7  62\nMerc 230            22.8   4 140.8  95\nMerc 280            19.2   6 167.6 123\nMerc 280C           17.8   6 167.6 123\nMerc 450SE          16.4   8 275.8 180\nMerc 450SL          17.3   8 275.8 180\nMerc 450SLC         15.2   8 275.8 180\nCadillac Fleetwood  10.4   8 472.0 205\nLincoln Continental 10.4   8 460.0 215\nChrysler Imperial   14.7   8 440.0 230\nFiat 128            32.4   4  78.7  66\nHonda Civic         30.4   4  75.7  52\nToyota Corolla      33.9   4  71.1  65\nToyota Corona       21.5   4 120.1  97\nDodge Challenger    15.5   8 318.0 150\nAMC Javelin         15.2   8 304.0 150\nCamaro Z28          13.3   8 350.0 245\nPontiac Firebird    19.2   8 400.0 175\nFiat X1-9           27.3   4  79.0  66\nPorsche 914-2       26.0   4 120.3  91\nLotus Europa        30.4   4  95.1 113\nFord Pantera L      15.8   8 351.0 264\nFerrari Dino        19.7   6 145.0 175\nMaserati Bora       15.0   8 301.0 335\nVolvo 142E          21.4   4 121.0 109\n\n# these are very simple example of the functions filter() and select() in the dplyr package\n\n\n\n\n\n",
+    "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2023-01-04T22:49:35+09:00",
-    "input_file": "this-is-my-second-post.knit.md"
+    "last_modified": "2023-01-02T23:03:05+09:00",
+    "input_file": {}
   }
 ]
