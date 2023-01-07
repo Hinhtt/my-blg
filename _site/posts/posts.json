@@ -100,5 +100,22 @@
     "preview": {},
     "last_modified": "2023-01-02T23:03:05+09:00",
     "input_file": {}
+  },
+  {
+    "path": "posts/2023-01-07-this-is-a-draft/",
+    "title": "This is a draft",
+    "description": "This post will not be published",
+    "author": [
+      {
+        "name": "ヒン",
+        "url": "https://runiverse.com/trantuanhinh"
+      }
+    ],
+    "date": "2023-01-02",
+    "categories": [],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2023-01-07T20:46:04+09:00",
+    "input_file": "this-is-a-draft.knit.md"
   }
 ]
