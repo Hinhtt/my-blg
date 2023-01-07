@@ -1,0 +1,21 @@
+---
+title: "This is a draft"
+description: |
+  This post will not be published
+author:
+  - name: ヒン
+    url: https://runiverse.com/trantuanhinh
+date: 2023-01-02
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
